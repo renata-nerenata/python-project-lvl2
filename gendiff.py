@@ -34,9 +34,9 @@ def answer_to_string(answer_sorted):
     return print(string)
 
 
-def generate_diff():
-    file1 = read_file('file1.json')
-    file2 = read_file('file2.json')
+def generate_diff(first_file, second_file):
+    file1 = read_file(first_file)
+    file2 = read_file(second_file)
     answer = get_answer(file1, file2)
     answer_sorted = sorted_answer(answer)
     return answer_to_string(answer_sorted)
@@ -49,7 +49,7 @@ def main():
     parser.add_argument('-f', '-format', help='set format of output')
 
     args = parser.parse_args()
-    print(args.accumulate(args.integers))
+    generate_diff(args.first_file, args.second_file)
 
 
 if __name__ == '__main__':
