@@ -23,13 +23,13 @@ def get_answer(file1, file2):
 
 
 def sorted_answer(answer):
-    return {k: v for k, v in sorted(answer.items(), key =  lambda x: x[0][2])}
+    return {k: v for k, v in sorted(answer.items(), key=lambda x: x[0][2])}
 
 
 def answer_to_string(answer_sorted):
     string = '{\n'
     for k, v in answer_sorted.items():
-        string = string + str(k) + ' : ' + str(v) + '\n'
+        string = string + '   ' + str(k) + ' : ' + str(v) + '\n'
     string = string + '}'
     return print(string)
 
@@ -46,7 +46,9 @@ def main():
     parser = argparse.ArgumentParser(description='Generate diff')
     parser.add_argument('first_file')
     parser.add_argument('second_file')
-    parser.add_argument('-f', '-format', help='set format of output')
+    parser.add_argument('-f', '--format',
+                        help='set format of output',
+                        default='stylish')
 
     args = parser.parse_args()
     generate_diff(args.first_file, args.second_file)
