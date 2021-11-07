@@ -6,3 +6,5 @@
 /.ipynb_checkpoints
 /.ipynb_checkpoints/*
 .DS_Store
+Hexlet_second_project.ipynb
+__pycache__/*

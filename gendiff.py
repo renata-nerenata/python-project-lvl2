@@ -1,57 +1,49 @@
 import argparse
 import json
+import yaml
+from build_diff import build_diff
+from gen_diff.formaters.stylish import render_stylish
+from gen_diff.formaters.plain import render_plain
+from gen_diff.formaters.json import render_json
 
 
-def read_file(path):
-    return json.load(open(path))
+def read_file(file_name):
+    if file_name.endswith(".json"):
+        return json.load(open(file_name))
+    elif file_name.endswith(".yml") or file_name.endswith(".yaml"):
+        return yaml.load(open(file_name))
+    else:
+        print('Wrong file extension')
 
 
-def get_answer(file1, file2):
-    answer = {}
-    for key_1, value_1 in file1.items():
-        for key_2, value_2 in file2.items():
-            if (key_1 == key_2) & (value_1 == value_2):
-                answer[str('  ' + key_1)] = value_1
-            if (key_1 == key_2) & (value_1 != value_2):
-                answer[str('- ' + key_1)] = value_1
-                answer[str('+ ' + key_2)] = value_2
-    for key in set(file1) - set(file2):
-        answer[str('- ' + key)] = file1[key]
-    for key in set(file2) - set(file1):
-        answer[str('+ ' + key)] = file2[key]
-    return answer
+def format_diff(diff, format_name):
+    if format_name == 'stylish':
+        return render_stylish(diff)
+    if format_name == 'plain':
+        return render_plain(diff)
+    if format_name == 'json':
+        return render_json(diff)
 
 
-def sorted_answer(answer):
-    return {k: v for k, v in sorted(answer.items(), key=lambda x: x[0][2])}
-
-
-def answer_to_string(answer_sorted):
-    string = '{\n'
-    for k, v in answer_sorted.items():
-        string = string + '   ' + str(k) + ' : ' + str(v) + '\n'
-    string = string + '}'
-    return print(string)
-
-
-def generate_diff(first_file, second_file):
+def generate_diff(first_file, second_file, format_name):
     file1 = read_file(first_file)
     file2 = read_file(second_file)
-    answer = get_answer(file1, file2)
-    answer_sorted = sorted_answer(answer)
-    return answer_to_string(answer_sorted)
+    answer_raw = build_diff(file1, file2)
+    answer = format_diff(answer_raw, format_name)
+    return answer
 
 
 def main():
     parser = argparse.ArgumentParser(description='Generate diff')
     parser.add_argument('first_file')
     parser.add_argument('second_file')
+    parser.add_argument('format_name')
     parser.add_argument('-f', '--format',
                         help='set format of output',
                         default='stylish')
 
     args = parser.parse_args()
-    generate_diff(args.first_file, args.second_file)
+    generate_diff(args.first_file, args.second_file, args.format_name)
 
 
 if __name__ == '__main__':
