@@ -1,4 +1,4 @@
-from constants import (
+from gen_diff.constants import (
     ADDED,
     CHILDREN,
     KEY,

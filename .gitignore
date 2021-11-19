@@ -8,3 +8,14 @@
 .DS_Store
 Hexlet_second_project.ipynb
 __pycache__/*
+gen_diff/formaters/__pycache__/*
+gen_diff/formaters/__pycache__/json.cpython-38.pyc
+gen_diff/formaters/__pycache__/plain.cpython-38.pyc
+gen_diff/formaters/__pycache__/stylish.cpython-38.pyc
+gen_diff/__init__.py
+gen_diff/__pycache__/
+gen_diff/formaters/__pycache__/__init__.cpython-38.pyc
+tests/__pycache__/
+gen_diff/formaters/__pycache__/
+__pycache__/
+gen_diff/formaters/__pycache__/*.pyc

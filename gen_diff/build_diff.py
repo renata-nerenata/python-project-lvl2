@@ -1,4 +1,4 @@
-from constants import (
+from gen_diff.constants import (
     ADDED,
     CHILDREN,
     KEY,
@@ -78,3 +78,7 @@ def create(data1, data2=None):
         })
 
     return result_diff
+
+
+if __name__ == '__main__':
+    main()

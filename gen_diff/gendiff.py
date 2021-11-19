@@ -1,7 +1,7 @@
 import argparse
 import json
 import yaml
-from build_diff import build_diff
+from gen_diff.build_diff import build_diff
 from gen_diff.formaters.stylish import render_stylish
 from gen_diff.formaters.plain import render_plain
 from gen_diff.formaters.json import render_json
@@ -30,6 +30,7 @@ def generate_diff(first_file, second_file, format_name):
     file2 = read_file(second_file)
     answer_raw = build_diff(file1, file2)
     answer = format_diff(answer_raw, format_name)
+    print(answer)
     return answer
 
 

@@ -1,4 +1,4 @@
-from constants import (
+from gen_diff.constants import (
     ADDED,
     CHILDREN,
     KEY,
@@ -7,21 +7,21 @@ from constants import (
     REMOVED,
     TYPE,
     UNCHANGED,
-    UPDATED,
-    VALUE
+    UPDATED
 )
 
-def to_string(value_to_str): # как отобразить python формат в строке
-    if isinstance(value_to_str, dict): # если
+
+def to_string(value_to_str):  # как отобразить python формат в строке
+    if isinstance(value_to_str, dict):  # если
         return '[complex value]'
 
-    if isinstance(value_to_str, str): # строка в кавычках
+    if isinstance(value_to_str, str):  # строка в кавычках
         return "'{0}'".format(value_to_str)
 
     if value_to_str is None:
         return 'null'
 
-    return str(value_to_str).lower() # если булевое значение
+    return str(value_to_str).lower()  # если булевое значение
 
 
 def to_list(items):
@@ -35,7 +35,7 @@ def to_list(items):
     return items_list
 
 
-def render_plain(diff): # та же логика
+def render_plain(diff):  # та же логика
     diff_type = diff[TYPE]
     key = diff.get(KEY)
     children = diff.get(CHILDREN)
