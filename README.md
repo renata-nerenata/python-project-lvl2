@@ -1,7 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/renata-nerenata/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/renata-nerenata/python-project-lvl2/actions)
-![Python package](https://github.com/renata-nerenata/python-project-lvl2/actions/workflows/tests)
-
+![Python package](https://github.com/renata-nerenata/python-project-lvl2/actions/workflows/tests.yml)
 
 
 ### Codeclimate chech up status:
