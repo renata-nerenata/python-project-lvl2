@@ -35,7 +35,7 @@ def to_list(items):
     return items_list
 
 
-def render_plain(diff):  # та же логика
+def render_plain(diff):
     diff_type = diff[TYPE]
     key = diff.get(KEY)
     children = diff.get(CHILDREN)

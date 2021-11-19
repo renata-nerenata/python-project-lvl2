@@ -25,11 +25,9 @@ def create_list_keys(dict1, dict2):
 
 
 def create(data1, data2=None):
-    #is dict
     if not isinstance(data1, dict):
         return data1
 
-    # if data2 empty
     if data2 is None:
         data2 = data1
 
@@ -78,7 +76,3 @@ def create(data1, data2=None):
         })
 
     return result_diff
-
-
-if __name__ == '__main__':
-    main()

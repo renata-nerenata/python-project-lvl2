@@ -39,12 +39,12 @@ def make_indent(depth, indent_size=INDENT_SIZE, indent_type=INDENT_TYPE):
 
 
 def render_stylish(diff, depth=0):
-    diff_type = diff[TYPE] #получаем статус дерева - ORIGIN - нулевой уровень дерева
+    diff_type = diff[TYPE]
     key = diff.get(KEY)
-    indent = make_indent(depth) #управление отступом
-    children = diff.get(CHILDREN) #пройтись по детям
+    indent = make_indent(depth)
+    children = diff.get(CHILDREN)
 
-    if diff_type == ORIGIN: #
+    if diff_type == ORIGIN:
         rows = ['{0}{1}\n'.format(
             indent,
             render_stylish(child, depth),
