@@ -1,10 +1,10 @@
 import argparse
 import json
 import yaml
-from gen_diff.build_diff import build_diff
-from gen_diff.formaters.stylish import render_stylish
-from gen_diff.formaters.plain import render_plain
-from gen_diff.formaters.json import render_json
+from gendiff.build_diff import build_diff
+from gendiff.formaters.stylish import render_stylish
+from gendiff.formaters.plain import render_plain
+from gendiff.formaters.json import render_json
 
 
 def read_file(file_name):

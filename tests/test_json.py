@@ -1,4 +1,4 @@
-from gen_diff.gendiff import generate_diff
+from gendiff.gendiff import generate_diff
 
 
 def read_txt(name):
