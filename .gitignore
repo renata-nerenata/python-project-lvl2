@@ -12,7 +12,6 @@ gendiff/formaters/__pycache__/*
 gendiff/formaters/__pycache__/json.cpython-38.pyc
 gendiff/formaters/__pycache__/plain.cpython-38.pyc
 gendiff/formaters/__pycache__/stylish.cpython-38.pyc
-gendiff/__init__.py
 gendiff/__pycache__/
 gendiff/formaters/__pycache__/__init__.cpython-38.pyc
 tests/__pycache__/
