@@ -32,20 +32,3 @@ def generate_diff(first_file, second_file, format_name='stylish'):
     answer = format_diff(answer_raw, format_name)
     print(answer)
     return answer
-
-
-def main():
-    parser = argparse.ArgumentParser(description='Generate diff')
-    parser.add_argument('first_file')
-    parser.add_argument('second_file')
-    parser.add_argument('format_name')
-    parser.add_argument('-f', '--format',
-                        help='set format of output',
-                        default='stylish')
-
-    args = parser.parse_args()
-    generate_diff(args.first_file, args.second_file, args.format_name)
-
-
-if __name__ == '__main__':
-    main()
