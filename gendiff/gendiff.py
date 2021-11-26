@@ -1,4 +1,3 @@
-import argparse
 import json
 import yaml
 from gendiff.build_diff import build_diff
@@ -11,7 +10,7 @@ def read_file(file_name):
     if file_name.endswith(".json"):
         return json.load(open(file_name))
     elif file_name.endswith(".yml") or file_name.endswith(".yaml"):
-        return yaml.load(open(file_name))
+        return yaml.safe_load(open(file_name))
     else:
         print('Wrong file extension')
 
