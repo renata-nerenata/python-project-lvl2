@@ -25,7 +25,7 @@ def format_diff(diff, format_name):
         return render_json(diff)
 
 
-def generate_diff(first_file, second_file, format_name):
+def generate_diff(first_file, second_file, format_name='stylish'):
     file1 = read_file(first_file)
     file2 = read_file(second_file)
     answer_raw = build_diff(file1, file2)
