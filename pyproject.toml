@@ -4,7 +4,7 @@ version = "0.0.0"
 description = "Second project"
 authors = ["Renata_Mutalova <41615@mail.ru>"]
 packages = [
-  { include = "gen_diff" },
+  { include = "gendiff" },
 ]
 
 [tool.poetry.dependencies]
