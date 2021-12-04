@@ -2,4 +2,4 @@ import json
 
 
 def render_json(diff):
-    return json.dumps(diff, indent=1)
+    return json.dumps(diff, indent=2)

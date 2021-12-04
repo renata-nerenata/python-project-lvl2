@@ -14,7 +14,7 @@ from gendiff.constants import (
 
 def build_diff(data1, data2):
     return {TYPE: ORIGIN,
-            CHILDREN: create(data1, data2)}
+            CHILDREN: create_diff(data1, data2)}
 
 
 def create_list_keys(dict1, dict2):
@@ -24,7 +24,7 @@ def create_list_keys(dict1, dict2):
     return keys1 if (dict1 == dict2) else set(keys1 + keys2)
 
 
-def create(data1, data2=None):
+def create_diff(data1, data2=None):
     if not isinstance(data1, dict):
         return data1
 
@@ -56,7 +56,7 @@ def create(data1, data2=None):
                 result_diff.append({
                     TYPE: NESTED,
                     KEY: key,
-                    CHILDREN: create(data1[key], data2[key]),
+                    CHILDREN: create_diff(data1[key], data2[key]),
                 })
                 continue
 
