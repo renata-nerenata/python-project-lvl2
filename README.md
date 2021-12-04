@@ -5,9 +5,6 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a48adcf1d95882daed37/test_coverage)](https://codeclimate.com/github/renata-nerenata/python-project-lvl2/test_coverage)
 
 
-### Codeclimate chech up status:
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
-
 ## Difference generator
 
 Utility for finding difference between .json and .yml files. Report can be presented in three forms:
@@ -18,7 +15,7 @@ Utility for finding difference between .json and .yml files. Report can be prese
 ### Run
 
 ```console
-poetry run python -m gen_diff.gendiff first_file second_file style
+poetry run gendiff <file1> <file2> --format <format>
 ```
 
 ### Demo
