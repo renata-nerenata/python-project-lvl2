@@ -18,5 +18,4 @@ def generate_diff(first_file, second_file, format_name='stylish'):
     file1 = read_file(first_file)
     file2 = read_file(second_file)
     diff = build_diff(file1, file2)
-    answer = format_diff(diff, format_name)
-    return answer
+    return format_diff(diff, format_name)
