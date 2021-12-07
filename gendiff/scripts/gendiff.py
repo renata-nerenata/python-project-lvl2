@@ -1,4 +1,4 @@
-from gendiff.scripts.get_args import get_args
+from gendiff.get_args import get_args
 from gendiff.gendiff import generate_diff
 
 
